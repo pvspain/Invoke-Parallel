@@ -10,7 +10,7 @@ if (-not (& git remote | Where-Object { $_ -eq 'upstream' })) {
   & git remote add upstream $upstreamRepoUrl
 } 
 # Recheck for upstream remote...
-if (& git remote | Where-Object {$_ -match 'upstream' }) {
+if (& git remote | Where-Object { $_ -eq 'upstream' }) {
     Write-Output "Fetching changes from 'upstream/master'..."  
     & git fetch upstream
     Write-Output "Checking out local 'master' branch..."  
